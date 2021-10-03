@@ -1,5 +1,5 @@
 provider "aws" {
-    profile = "default"
+    profile = "challenge"
     region = "us-east-2"
 }
 
@@ -227,6 +227,9 @@ resource "aws_instance" "db" {
     Name = "${var.project-tag.Name}-database"
   }
   vpc_security_group_ids = [aws_security_group.private.id]
+  depends_on = [
+    aws_nat_gateway.cocus-ng
+  ]
 }
 
 
