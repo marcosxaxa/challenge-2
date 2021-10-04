@@ -9,8 +9,7 @@ You will need:
 
 ## Credential profile configuration
 
-:exclamation: Disclaimer
-This Terraform code uses a profile called **challenge** which, was configured using the following procedure:
+:exclamation: This Terraform code uses a profile called **challenge** which, was configured using the following procedure:
 
 [To install the AWS CLI version 2, see Installing, updating, and uninstalling the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
