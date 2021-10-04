@@ -13,7 +13,7 @@ You will need:
 
 [To install the AWS CLI version 2, see Installing, updating, and uninstalling the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
-After following the instructions on the above procedure, the profile configured should have the _same name_ in the **main.tf** file **profile** parameter. Change it as needed.
+After following the instructions on the above procedure, the profile configured should have the _same name_ in the **profile** parameter in the **main.tf** file. Change it as needed.
 
 ### Shared Credentials File
 
