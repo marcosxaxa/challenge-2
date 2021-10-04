@@ -9,7 +9,7 @@ You will need:
 
 ## Credential profile configuration
 
-:exclamation: #### Disclaimer
+:exclamation: Disclaimer
 This Terraform code uses a profile called **challenge** which, was configured using the following procedure:
 
 [To install the AWS CLI version 2, see Installing, updating, and uninstalling the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
@@ -95,12 +95,16 @@ terraform apply -var-file=var.tfvars
 
 ```
 
-:grey_exclamation: Append the **-auto-approve** parameter to the command to apply automatically
+:grey_exclamation: Type **yes** when prompted to accept and apply or append the **-auto-approve** parameter to the command to apply automatically.
 
 ## Accessing the webpage
 
-This script displays a simple page showing how many tables there are on the database ec2 instance. The Terraform script gives an IP as output. Accessing this IP on a browser will display the webpage.
+When deployed, the Terraform script gives an IP as output. Accessing this IP on a browser will display a simple page showing how many tables are on the database in the ec2 instance.
+
+## Cleaning up
+
+To delete the resources previously created, you can use the following command:
 
 ```
-
+terraform destroy -var-file=var.tfvars -auto-approve
 ```
