@@ -4,17 +4,17 @@
 
 You will need:
 
-1.  terraform - [Installation docs](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+1.  Terraform - [Installation docs](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 2.  An AWS IAM user with at least **AmazonEC2FullAccess** and **AmazonVPCFullAccess** policies attached
 
 ## Credential profile configuration
 
 :exclamation: #### Disclaimer
-This terraform code uses a profile called **challenge** which, was configured using the following procedure:
+This Terraform code uses a profile called **challenge** which, was configured using the following procedure:
 
 [To install the AWS CLI version 2, see Installing, updating, and uninstalling the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
-After following the instructions on the above procedure, the profile configured should have the _same name_ in the **main.tf** file:
+After following the instructions on the above procedure, the profile configured should have the _same name_ in the **main.tf** file **profile** parameter. Change it as needed.
 
 ### Shared Credentials File
 
@@ -23,25 +23,29 @@ You can use AWS credentials or a configuration file to specify your credentials.
 Usage:
 
 ```
+
 provider "aws" {
-region = "us-west-2"
-profile = "challenge"
+    region = "us-west-2"
+    profile = "challenge"
 }
+
 ```
 
 ## Static Credentials
 
-:warning: Hard-coded credentials are not recommended in any Terraform configuration and risk secret leakage should this file ever be committed to a public version control system.
+:warning: Hard-coded credentials are not recommended in any Terraform configuration and, it risks secrets leakage should this file ever be committed to a public version control system.
 Static credentials can be provided by adding an access_key and secret_key in-line in the AWS provider block:
 
 Usage:
 
 ```
+
 provider "aws" {
 region = "us-west-2"
 access_key = "my-access-key"
 secret_key = "my-secret-key"
 }
+
 ```
 
 ## Cloning the project
@@ -49,40 +53,54 @@ secret_key = "my-secret-key"
 Clone the git project to your workstation with the following command:
 
 ```
+
 git clone https://github.com/marcosxaxa/challenge-2.git
+
 ```
 
 ## Creating the resources
 
-Change into the terraform folder :
+Change into the Terraform folder :
 
 ```
+
 cd challenge-2/terraform
-```
-
-Inside this folder is all the files that terraform will use to deploy the resources to AWS. Use these commands:
-Initialize the terraform project:
 
 ```
+
+Inside this folder is all the files that Terraform will use to deploy the resources to AWS. Use these commands:
+Initialize the Terraform project:
+
+```
+
 terraform init
-```
-
-Plan what terraform will deploy
 
 ```
+
+Plan what Terraform will deploy
+
+```
+
 terraform plan -var-file=var.tfvars
+
 ```
 
-:exclamation: The **-var-file** parameter is necessary so terraform can read the values of the variables
+:exclamation: The **-var-file** parameter is necessary so Terraform can read the values of the variables
 
 Finally, to deploy the resources use this command:
 
 ```
+
 terraform apply -var-file=var.tfvars
+
 ```
 
 :grey_exclamation: Append the **-auto-approve** parameter to the command to apply automatically
 
 ## Accessing the webpage
 
-This script displays a simple page showing how many tables there are on the database ec2 instance. The terraform script gives an IP as output. Accessing this IP on a browser will display the webpage.
+This script displays a simple page showing how many tables there are on the database ec2 instance. The Terraform script gives an IP as output. Accessing this IP on a browser will display the webpage.
+
+```
+
+```
