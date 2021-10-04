@@ -5,7 +5,7 @@
 You will need:
 
 1.  Terraform - [Installation docs](https://learn.hashicorp.com/tutorials/terraform/install-cli)
-2.  An AWS IAM user with at least **AmazonEC2FullAccess** and **AmazonVPCFullAccess** policies attached
+2.  An _AWS IAM_ user with programmatic access and at least **AmazonEC2FullAccess** and **AmazonVPCFullAccess** policies attached
 
 ## Credential profile configuration
 
