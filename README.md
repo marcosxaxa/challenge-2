@@ -91,11 +91,11 @@ Finally, to deploy the resources use this command:
 
 ```
 
-terraform apply -var-file=var.tfvars
+terraform apply -var-file=var.tfvars -auto-approve
 
 ```
 
-:grey_exclamation: Type **yes** when prompted to accept and apply or append the **-auto-approve** parameter to the command to apply automatically.
+:grey_exclamation: The **-auto-approve** parameter is to apply automatically.
 
 ## Accessing the webpage
 
